@@ -1,0 +1,29 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.util.HashMap;
+
+public class Main {
+   public Main() {
+   }
+
+   public static int[] twoSum(int[] var0, int var1) {
+      HashMap var2 = new HashMap();
+
+      for(int var3 = 0; var3 < var0.length; ++var3) {
+         int var4 = var1 - var0[var3];
+         if (var2.containsKey(var4)) {
+            return new int[]{(Integer)var2.get(var4), var3};
+         }
+
+         var2.put(var0[var3], var3);
+      }
+
+      throw new IllegalArgumentException("No two sum solution");
+   }
+
+   public static void main(String[] var0) {
+      int[] var1 = new int[]{2, 7, 11, 15};
+      byte var2 = 9;
+      int[] var3 = twoSum(var1, var2);
+      System.out.println("Indices: " + var3[0] + ", " + var3[1]);
+   }
+}
